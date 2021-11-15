@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Board
  */
@@ -68,4 +70,45 @@ public class Board {
     }
     return played;
   }
+
+  public boolean haveAWinner(){
+    boolean winner = false;
+
+    for (int row = 0; row < MAX_ROWS; row++) {
+      if(!Arrays.stream(gameboard[row]).anyMatch(obj -> obj == null)){
+        winner = Arrays.stream(gameboard[row]).map(x -> x.getName()).distinct().count() <= 1;
+      }
+    }
+
+    if(!winner) {
+      a:
+      for (int col = 0; col < MAX_COLS; col++) {
+        Pieces[] column = new Pieces[MAX_ROWS];
+        for (int row = 0; row < MAX_ROWS; row++) {
+          column[row] = gameboard[row][col];
+        }
+
+        if(!Arrays.stream(column).anyMatch(obj -> obj == null)){
+          winner = Arrays.stream(column).map(x -> x.getName()).distinct().count() <= 1;
+          if(winner){
+            break a;
+          }
+        }
+      }
+    }    
+
+    if(!winner) {
+      Pieces[] diagonals = new Pieces[MAX_ROWS];
+      for (int diag = 0; diag< MAX_ROWS; diag++){
+        diagonals[diag] = gameboard[diag][diag];
+      }
+
+      if (!Arrays.stream(diagonals).anyMatch(obj -> obj == null)){
+        winner = Arrays.stream(diagonals).map(x -> x.getName()).distinct().count() <= 1;
+      }
+    }
+
+    return winner;
+  }
+
 }

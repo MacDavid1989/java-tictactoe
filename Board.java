@@ -47,6 +47,11 @@ public class Board {
   }
 
   public boolean play(char player, int row, int col){
-
+    if (isSpaceFree(row,col)) {
+      gameboard[row][col] = new Pieces(player, row, col);
+      return true;
+    } else {
+      return false;
+    }
   }
 }

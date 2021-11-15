@@ -23,7 +23,7 @@ public class Board {
   }
 
   public void printBoard() {
-    String colHeader = " T  1 | 2 | 3 ";
+    String colHeader = "T  1 | 2 | 3 ";
     System.out.println(colHeader);
     System.out.println("-".repeat(colHeader.length()));
 

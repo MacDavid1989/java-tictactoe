@@ -111,4 +111,7 @@ public class Board {
     return winner;
   }
 
+  public boolean spaceAvailable(){
+    return Arrays.stream(gameboard).flatMap(x -> Arrays.stream(x)).anyMatch(obj -> obj == null);
+  }
 }

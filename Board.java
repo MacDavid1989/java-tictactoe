@@ -1,0 +1,6 @@
+/**
+ * Board
+ */
+public class Board {
+  
+}

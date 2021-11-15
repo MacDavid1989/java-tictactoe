@@ -17,4 +17,9 @@ public class Pieces extends Player {
   public int getCol() {
     return col;
   }
+
+  @Override
+  public String toString() {
+    return "Pieces: Player" + getName() +"[" + getCol() + "," + getRow() + "]";
+  }
 }

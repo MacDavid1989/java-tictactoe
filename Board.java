@@ -21,6 +21,16 @@ public class Board {
   }
 
   public void printBoard() {
-    
+    for (int row = 0; row < MAX_ROWS; row++){
+      for (int col = 0; col < MAX_COLS; col++){
+        if (gameboard[row][col] == null){
+          System.out.print(" ");
+        } else {
+          System.out.print(gameboard[row][col].getName());
+        }
+
+      }
+      System.out.println();
+    }
   }
 }

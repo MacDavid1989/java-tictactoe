@@ -54,4 +54,18 @@ public class Board {
       return false;
     }
   }
+
+  public boolean autoPlay(char player) {
+    boolean played = false;
+    a:
+    for (int row = 0; row < MAX_ROWS; row++){
+      for (int col = 0; col < MAX_COLS; col++){
+        if (play(player, row, col)){
+          played = true;
+          break a;
+        }  
+      }
+    }
+    return played;
+  }
 }

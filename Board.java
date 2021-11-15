@@ -33,4 +33,20 @@ public class Board {
       System.out.println();
     }
   }
+
+  private boolean isSpaceFree(int row, int col){
+    if((row >= MAX_ROWS) || (col >= MAX_COLS)){
+      return false;
+    }
+
+    if (gameboard[row][col] == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public boolean play(char player, int row, int col){
+
+  }
 }

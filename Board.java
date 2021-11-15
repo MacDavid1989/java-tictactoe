@@ -19,4 +19,8 @@ public class Board {
   public int getMAXCOLS() {
     return MAX_COLS;
   }
+
+  public void printBoard() {
+    
+  }
 }

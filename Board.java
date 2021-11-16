@@ -22,7 +22,7 @@ public class Board {
     return MAX_COLS;
   }
 
-  public void printBoard() {
+  public void printBoard(String winner) {
     String colHeader = "T  1 | 2 | 3 ";
     System.out.println(colHeader);
     System.out.println("-".repeat(colHeader.length()));
@@ -42,6 +42,10 @@ public class Board {
       if(row < (MAX_ROWS - 1)){
         System.out.println("-".repeat(printStr.length() + 1));
       }
+    }
+
+    if(winner != "") {
+      System.out.println(winner);
     }
   }
 

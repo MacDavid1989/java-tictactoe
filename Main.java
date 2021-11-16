@@ -22,7 +22,7 @@ public class Main
         boolean stop = false;
 
         String winner = "";
-        gameBoard.printBoard();
+        gameBoard.printBoard(winner);
         while (!stop)
         {
             boolean goodPlay = false;
@@ -69,7 +69,7 @@ public class Main
                 stop = true;
             }
 
-            gameBoard.printBoard();
+            gameBoard.printBoard(winner);
             
             try
             {
@@ -80,7 +80,7 @@ public class Main
             }
         }
 
-        gameBoard.printBoard();
+        gameBoard.printBoard(winner);
         
         System.out.println("\n*** Plays Made ***");
         plays.forEach(x -> System.out.println(x));
